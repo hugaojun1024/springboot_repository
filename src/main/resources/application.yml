@@ -1,4 +1,3 @@
-
 server:
   port: 8088
 
@@ -12,6 +11,5 @@ spring:
     multipart:
       max-file-size: 20MB
       max-request-size: 60MB
-
-mybatis-plus:
-  mapper-locations: classpath:mapper/*.xml
+  mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml

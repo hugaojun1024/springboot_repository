@@ -1,14 +1,15 @@
 package com.zds.springboot.controller;
 
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.zds.springboot.common.Constants;
 import com.zds.springboot.common.Result;
 import com.zds.springboot.model.User;
-import com.zds.springboot.service.Http;
 import com.zds.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")

@@ -39,6 +39,31 @@ public class RequestDataForwarding {
     }
 
     /**
+     * 库存信息查询
+     * @param storageLocation
+     * @return
+     */
+    @RequestMapping("/stock_inquiryBySL")
+    public Object stockInquiryBySL(String storageLocation){
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://10.1.128.59:7002/ncpmsmm/receiveMessage";
+        Class responseType = String.class;
+        HttpHeaders head = new HttpHeaders();
+        head.add("Content-Type","application/json");
+        head.add("serviceId","MM_QLT_01");
+        String body = "";
+        if (!storageLocation.equals("") && !(storageLocation == null)){
+            body = "{\n" +
+                    "    \"storageLocation\":\""+storageLocation+"\"\n" +
+                    "}\n";
+        }
+        HttpEntity<String> entity = new HttpEntity(body, head);
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, entity, responseType);
+        JSONObject jsonObject = JSONObject.parseObject(responseEntity.getBody());
+        return jsonObject;
+    }
+
+    /**
      * 资产信息查询
      * @param unitCode
      * @return

@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://0vo.cc/db_warehouse_mysql8?serverTimezone=GMT%2b8
     username: root
-    password: pwd123456
+    password: 123456
   servlet:
     multipart:
       max-file-size: 20MB

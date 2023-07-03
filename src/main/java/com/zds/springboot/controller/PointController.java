@@ -27,7 +27,6 @@ public class PointController {
 
         //下面做数据库保存
 
-
         return "success";
     }
 }
